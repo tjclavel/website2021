@@ -1,0 +1,11 @@
+.Dvd-main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: black;
+}
+
+.Dvd-image {
+  width: 15vw;
+  position: absolute;
+}
