@@ -19,7 +19,7 @@ function Dvd(props) {
     if (pos.left + vel.left < 0 || pos.left + vel.left + width > parentWidth) {
       velLeft = -vel.left;
     }
-    if (pos.top + vel.top < 0 || pos.top + vel.top + height > parentHeight) {
+    if (pos.top + vel.top < 0 || pos.top + vel.top + height > parentHeight - 2) {
       velTop = -vel.top;
     }
     setPos({left: pos.left + velLeft, top: pos.top + velTop});
