@@ -16,11 +16,15 @@ function Dvd(props) {
     const parentHeight = imgRef.current.parentElement.clientHeight;
     var velLeft = vel.left;
     var velTop = vel.top;
-    if (pos.left + vel.left < 0 || pos.left + vel.left + width > parentWidth) {
-      velLeft = -vel.left;
+    if (pos.left + vel.left < 0) {
+      velLeft = Math.abs(velLeft);
+    } else if (pos.left + vel.left + width > parentWidth) {
+      velLeft = -Math.abs(velLeft);
     }
-    if (pos.top + vel.top < 0 || pos.top + vel.top + height > parentHeight - 2) {
-      velTop = -vel.top;
+    if (pos.top + vel.top < 0) {
+      velTop = Math.abs(velTop);
+    } else if (pos.top + vel.top + height > parentHeight - vel.top) {
+      velTop = -Math.abs(velTop);
     }
     setPos({left: pos.left + velLeft, top: pos.top + velTop});
     setVel({left: velLeft, top: velTop});
